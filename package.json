@@ -24,7 +24,8 @@
     "electron-start": "electron .",
     "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && npm run electron-start\"",
     "build": "react-scripts build",
-    "electron-pack": "electron ."
+    "electron-pack": "electron .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -45,9 +46,12 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "concurrently": "^9.1.2",
     "electron": "^35.1.5",
     "electron-is-dev": "^3.0.1",
+    "husky": "^9.1.7",
     "wait-on": "^8.0.3"
   }
 }
