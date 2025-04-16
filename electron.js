@@ -18,7 +18,6 @@ function createWindow() {
       ? 'http://localhost:3000' // 개발용: React dev 서버
       : `file://${path.join(__dirname, 'build/index.html')}` // 배포용: 빌드된 파일
   );
-
 }
 
 app.whenReady().then(createWindow);
