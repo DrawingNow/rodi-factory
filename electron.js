@@ -1,6 +1,9 @@
-const { app, BrowserWindow } = require('electron');
+const { app: electronApp, BrowserWindow } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+const expressApp = require('./server/index.js');
+
+let isServerStarted = false;
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -20,4 +23,13 @@ function createWindow() {
   );
 }
 
-app.whenReady().then(createWindow);
+electronApp.whenReady().then(() => {
+  if (!isServerStarted) {
+    expressApp.listen(5002, () => {
+      console.log('✅ Express server running on http://localhost:5002');
+    });
+    isServerStarted = true;
+  }
+
+  createWindow();
+});
