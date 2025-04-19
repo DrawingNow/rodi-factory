@@ -45,7 +45,7 @@ const Sidebar = () => {
       </Box>
       <Divider />
       <List>
-        <SidebarItem icon={<MapIcon />} text="Map" path="/map" isOpen={open} />
+        <SidebarItem icon={<MapIcon />} text="Monitoring" path="/map" isOpen={open} />
 
         <SidebarCollapseItem
           icon={<AnalyticsIcon />}
