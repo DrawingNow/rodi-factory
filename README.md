@@ -9,7 +9,8 @@
 ### 🌱 설계 문서
 https://www.figma.com/design/QVv7dEgnwMT0ymG4d2aVjC/Rodi-Factory?node-id=1-2&t=mphCpQlqeWR038S0-1
 
-![image](https://github.com/user-attachments/assets/fdc09f15-896d-4bc6-b620-92f776dbac1c)
+![image](https://github.com/user-attachments/assets/2bacd06f-4244-4bd9-9331-d072127153a3)
+
 
 ## 🚀 주요 기능
 
