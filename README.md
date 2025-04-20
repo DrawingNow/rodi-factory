@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# 📦 Rodi-Factory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+공장에서 운용되는 AGV(무인이동로봇)의 상태를 시각화하고 관리할 수 있는 실시간 모니터링/제어 시스템입니다.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## 🖼️ 데모 화면
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🌱 설계 문서
+https://www.figma.com/design/QVv7dEgnwMT0ymG4d2aVjC/Rodi-Factory?node-id=1-2&t=mphCpQlqeWR038S0-1
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://github.com/user-attachments/assets/fdc09f15-896d-4bc6-b620-92f776dbac1c)
 
-### `npm test`
+## 🚀 주요 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- AGV 실시간 위치 표시 (Three.js 기반 3D 지도)
+- 로봇 상태 패널: 배터리, 오류, 화물 상태 등 표시
+- 대시보드: 오류 통계 차트 (Bar, Line, Pie)
+- 수동 제어 페이지 제공
+- MUI 기반 반응형 UI
 
-### `npm run build`
+## 🛠️ 기술 스택
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React, MUI, React Router, Three.js, MUI Charts
+- **Backend:** Node.js, Express
+- **기타:** ESLint + Prettier, GitHub Actions (테스트 시), Husky, CommitLint 등
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧪 설치 및 실행
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# 1. 클론
+git clone https://github.com/yourname/rodi-factory.git
+cd rodi-factory
 
-### `npm run eject`
+# 2. 의존성 설치
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 3. 개발 서버 실행
+npm run dev  # React + Electron + Express 병렬 실행
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 또는 개별 실행
+npm run server
+npm run electron
