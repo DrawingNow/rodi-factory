@@ -25,13 +25,15 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      axios.get('http://localhost:5002/api/hello').then((res) => setMsg(res.data.message), []);
       await sleep(1000);
-
-      setDataByDevice(GetDeviceErrorList());
-      setDataByYear(GetDataByYear());
-      setDataByErrorType(GetDataByErrorType());
-
+      axios.get('http://localhost:5002/api/hello').then((res) => setMsg(res.data.message));
+      axios
+        .get('http://localhost:5002/api/errors/by-device')
+        .then((res) => setDataByDevice(res.data));
+      axios.get('http://localhost:5002/api/errors/by-year').then((res) => setDataByYear(res.data));
+      axios
+        .get('http://localhost:5002/api/errors/by-type')
+        .then((res) => setDataByErrorType(res.data));
       setLoading(false);
     };
 
@@ -79,47 +81,6 @@ export default function DashboardPage() {
       </div>
     </div>
   );
-}
-
-function GetDeviceErrorList() {
-  const errorA = { data: [1, 5, 3, 4, 2], label: 'error 1' };
-  const errorB = { data: [5, 12, 7, 9, 2], label: 'error 2' };
-  const errorC = { data: [11, 0, 4, 5, 1], label: 'error 3' };
-
-  return [
-    { ...errorA, stack: 'total' },
-    { ...errorB, stack: 'total' },
-    { ...errorC, stack: 'total' },
-  ];
-}
-
-function GetDataByYear() {
-  return [{ data: [66, 73, 30, 30, 22, 50, 67] }];
-}
-
-function GetDataByErrorType() {
-  return [
-    {
-      label: 'type 1',
-      value: 72.72,
-    },
-    {
-      label: 'type 2',
-      value: 16.38,
-    },
-    {
-      label: 'type 3',
-      value: 3.83,
-    },
-    {
-      label: 'type 4',
-      value: 2.42,
-    },
-    {
-      label: 'type 5',
-      value: 4.65,
-    },
-  ];
 }
 
 export function BarChartByDevice({ loading, data }) {
